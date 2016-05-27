@@ -9,7 +9,6 @@ require(['gitbook'], function(gitbook) {
         buttons.reverse();
         
         buttons.forEach(function(button) {
-            var button = opts.buttons[i];
             gitbook.toolbar.createButton({
                 icon: button.icon || "fa fa-external-link",
                 label: button.label || "Link",
