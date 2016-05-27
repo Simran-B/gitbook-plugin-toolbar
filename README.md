@@ -9,28 +9,31 @@ This plugin can be configured in the `book.json`:
 ```js
 {
     "pluginsConfig": {
-        "toolbar": [
-            {
-                "label": "GitHub",
-                "icon": "fa fa-github",
-                "url": "https://github.com/"
-            },
-            {
-                "label": "Search page title on StackOverflow",
-                "icon": "fa fa-stack-overflow",
-                "url": "http://stackoverflow.com/search?q={{title}}"
-            },
-            {
-                "label": "Share link on Facebook",
-                "icon": "fa fa-facebook",
-                "url": "http://www.facebook.com/sharer/sharer.php?s=100&p[url]={{url}}"
-            },
-            {
-                "label": "Share page title and link on Twitter",
-                "icon": "fa fa-twitter",
-                "url": "http://twitter.com/home?status={{title}}%20{{url}}"
-            }
-        ]
+        "toolbar": {
+            "buttons":
+            [
+                {
+                    "label": "GitHub",
+                    "icon": "fa fa-github",
+                    "url": "https://github.com/"
+                },
+                {
+                    "label": "Search page title on StackOverflow",
+                    "icon": "fa fa-stack-overflow",
+                    "url": "http://stackoverflow.com/search?q={{title}}"
+                },
+                {
+                    "label": "Share link on Facebook",
+                    "icon": "fa fa-facebook",
+                    "url": "http://www.facebook.com/sharer/sharer.php?s=100&p[url]={{url}}"
+                },
+                {
+                    "label": "Share page title and link on Twitter",
+                    "icon": "fa fa-twitter",
+                    "url": "http://twitter.com/home?status={{title}}%20{{url}}"
+                }
+            ]
+        }
     }
 }
 ```
