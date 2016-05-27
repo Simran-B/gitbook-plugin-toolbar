@@ -1,38 +1,35 @@
-# plugin-sharing
+# plugin-toolbar
 
-This plugin adds sharing buttons in the GitBook website toolbar to share book on social networks.
-
-### Disable this plugin
-
-This is a default plugin and it can be disabled using a `book.json` configuration:
-
-```
-{
-    plugins: ["-sharing"]
-}
-```
+This plugin adds buttons with external links to a Gitbook website toolbar.
 
 ### Configuration
 
 This plugin can be configured in the `book.json`:
 
-Default configuration is:
-
 ```js
 {
     "pluginsConfig": {
-        "sharing": {
-            "facebook": true,
-            "twitter": true,
-            "google": false,
-            "weibo": false,
-            "instapaper": false,
-            "vk": false,
-            "all": [
-                "facebook", "google", "twitter",
-                "weibo", "instapaper"
-            ]
-        }
+        "toolbar": [
+            {
+                "label": "GitHub",
+                "icon": "fa fa-github"
+                "url": "https://github.com/",
+            },
+            {
+                "label": "Search page title on StackOverflow",
+                "icon": "fa fa-stack-overflow",
+                "url": "http://stackoverflow.com/search?q={{title}}",
+            },
+            {
+                "label": "Share link on Facebook",
+                "icon": "fa fa-facebook",
+                "url": "http://www.facebook.com/sharer/sharer.php?s=100&p[url]={{url}}"
+            {
+                "label": "Share page title and link on Twitter",
+                "icon": "fa fa-twitter",
+                "url": "http://twitter.com/home?status={{title}}%20{{url}}"
+            }
+        ]
     }
 }
 ```
