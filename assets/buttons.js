@@ -4,12 +4,15 @@ require(['gitbook'], function(gitbook) {
         var opts = config.toolbar;
         
         if (!opts || !opts.buttons) return;
-
-        for (var i = opts.buttons.length - 1; i >= 0; i--) {
-            var link = opts.buttons[i];
+        
+        var buttons = opts.buttons.slice(0);
+        buttons.reverse();
+        
+        buttons.forEach(function(button) {
+            var button = opts.buttons[i];
             gitbook.toolbar.createButton({
-                icon: link.icon || "fa fa-external-link",
-                label: link.label || "Link",
+                icon: button.icon || "fa fa-external-link",
+                label: button.label || "Link",
                 position: 'right',
                 onClick: function(e) {
                     e.preventDefault();
@@ -18,11 +21,11 @@ require(['gitbook'], function(gitbook) {
                         "{{url}}": encodeURIComponent(location.href)
                     };
                     var re = RegExp(Object.keys(mapping).join("|"), "g");
-                    window.open(link.url.replace(re, function(matched) {
+                    window.open(button.url.replace(re, function(matched) {
                         return mapping[matched];
                     }));
                 }
             });
-        }
+        });
     });
 });
