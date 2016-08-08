@@ -20,9 +20,14 @@ require(['gitbook'], function(gitbook) {
                         "{{url}}": encodeURIComponent(location.href)
                     };
                     var re = RegExp(Object.keys(mapping).join("|"), "g");
-                    window.open(button.url.replace(re, function(matched) {
+                    var url = button.url.replace(re, function(matched) {
                         return mapping[matched];
-                    }));
+                    });
+                    if (button.target == "_self") {
+                        window.location = url;
+                    } else {
+                        window.open(url, button.target || "_blank");
+                    }
                 }
             });
         });
