@@ -4,7 +4,7 @@ This plugin adds buttons with external links to a Gitbook website toolbar.
 
 ### Configuration
 
-This plugin can be configured in the `book.json`:
+This plugin can be configured in `book.json`:
 
 ```js
 {
@@ -15,7 +15,8 @@ This plugin can be configured in the `book.json`:
                 {
                     "label": "GitHub",
                     "icon": "fa fa-github",
-                    "url": "https://github.com/"
+                    "url": "https://github.com/",
+                    "target": "_self"
                 },
                 {
                     "label": "Search page title on StackOverflow",
