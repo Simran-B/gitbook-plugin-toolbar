@@ -12,7 +12,7 @@ require(['gitbook'], function(gitbook) {
             gitbook.toolbar.createButton({
                 icon: button.icon || "fa fa-external-link",
                 label: button.label || "Link",
-                position: 'right',
+                position: button.position || "right",
                 onClick: function(e) {
                     e.preventDefault();
                     var mapping = {

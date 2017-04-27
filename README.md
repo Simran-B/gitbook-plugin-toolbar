@@ -4,10 +4,13 @@ This plugin adds buttons with external links to a Gitbook website toolbar.
 
 ### Configuration
 
-This plugin can be configured in `book.json`:
+The buttons can be configured in **book.json**:
 
 ```js
 {
+    "plugins": [
+        "toolbar"
+    ],
     "pluginsConfig": {
         "toolbar": {
             "buttons":
@@ -31,6 +34,7 @@ This plugin can be configured in `book.json`:
                 {
                     "label": "Share page title and link on Twitter",
                     "icon": "fa fa-twitter",
+                    "position":"left",
                     "url": "http://twitter.com/home?status={{title}}%20{{url}}"
                 }
             ]
@@ -38,4 +42,12 @@ This plugin can be configured in `book.json`:
     }
 }
 ```
+
+The table below lists the default values of the optional button parameters:
+
+Button | Default
+---|---
+Label | Link
+Icon | fa-external-link
+Position | right
 
