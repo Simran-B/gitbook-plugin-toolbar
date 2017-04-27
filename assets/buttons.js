@@ -17,7 +17,8 @@ require(['gitbook'], function(gitbook) {
                     e.preventDefault();
                     var mapping = {
                         "{{title}}": encodeURIComponent(document.title),
-                        "{{url}}": encodeURIComponent(location.href)
+                        "{{url}}": encodeURIComponent(location.href),
+                        "{{filepath}}": encodeURIComponent((gitbook.state.innerLanguage ? gitbook.state.innerLanguage+'/' : '')+gitbook.state.filepath)
                     };
                     var re = RegExp(Object.keys(mapping).join("|"), "g");
                     var url = button.url.replace(re, function(matched) {
